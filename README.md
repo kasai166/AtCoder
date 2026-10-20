@@ -9,8 +9,13 @@ AtCoderの問題に対する解答コードを管理するリポジトリです�
 
 ```text
 AtCoder/
-├── ABC_480/
+├── ABC_○○○/
 │   ├── A.cpp
+│   ├── B.cpp
+│   └── ...
+├── ABC_△△△/
+│   ├── A.cpp
+│   ├── B.cpp
 │   └── ...
 └── README.md
 ```

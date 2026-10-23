@@ -21,6 +21,23 @@ template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true
 #define rall(v) (v).rbegin(), (v).rend()
 #define rep1(i,n) for(int i=1;i<=(n);i++)
 
+ll f(vpll a,ll n,ll w,ll ans,ll answ){
+    ll tmp=0;
+    if(n==-1){
+        return ans;
+    }    
+    else{
+        if(answ+a[n].second>w){
+            tmp=f(a,n-1,w,ans,answ);
+        }
+        else{
+            tmp=f(a,n-1,w,ans+a[n].first,answ+a[n].second);
+            chmax(tmp,f(a,n-1,w,ans,answ));
+        }
+    }
+    return tmp;
+}
+
 int main(void){
     ll N,W;
     cin>>N>>W;
@@ -28,6 +45,7 @@ int main(void){
     rep(i,N){
         cin>>AB[i].first>>AB[i].second;
     }
-
-	return 0;
+    ll ans=f(AB,N-1,W,0,0);
+	cout<<ans<<endl;
+    return 0;
 }

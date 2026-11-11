@@ -5,3 +5,5 @@
 !/ABC_*/**
 !template.cpp
 !/permanent/
+!/permanent/typical/
+!/permanent/typical/**
